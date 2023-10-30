@@ -1,0 +1,104 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	int x = 1, y = 0,sum=0,n=0;
+	while(x <= 10)
+	{
+		y = 0;
+		n = x;
+		while(x>0)
+		{
+			y=y+x;
+			x -= 1;
+		}
+		sum=sum+y;
+		x=n+1;
+	}
+	printf("%d\n", sum);
+}
+
+
+
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	int arr[] = { 1,2,3,4,5,6,7,8,9,0 };
+	int i=0,key;
+	scanf("%d", &key);
+	while(i<=9)
+		if (arr[i] == key)
+		{
+			printf("在数组第%d位", i+1);
+			break;
+		}
+		else
+		{
+			i += 1;
+		}
+}
+
+
+
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	int arr[] = { 0,1,2,3,4,5,6,7,8,9 };
+	int n = sizeof(arr) / sizeof(arr[0]);
+	int key;
+	int left = 0;
+	int right = n - 1;
+	scanf("%d", &key);
+	int mid;
+	while (right >= left)
+	{
+		mid = (left + right) / 2;
+		if (arr[mid] > key)
+		{
+			right = mid - 1;
+		}
+		else if (arr[mid < key])
+		{
+			left = mid + 1;
+		}
+		else
+		{
+			printf("你找的数的下标是第%d位", mid + 1);
+			break;
+		}
+	}
+	if (right < left)
+	{
+		printf("找不到思密达~");
+	}
+}
+
+
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<string.h>
+#include<windows.h>
+#include<stdlib.h>
+int main()
+{
+	char arr1[] = "lsyxhxiao!!!!!!!";
+	char arr2[] = "################";
+	int left = 0;
+	int right = strlen(arr1)-1;
+	while (left <= right)
+	{
+		arr2[left] = arr1[left];
+		arr2[right] = arr1[right];
+		printf("%s\n",arr2);
+		Sleep(1000);
+		system("cls");
+		left++;
+		right--;
+	}
+	return 0;
+}
