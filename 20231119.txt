@@ -1,0 +1,149 @@
+指针加减运算：
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	int arr[10] = { 0,1,2,3,4,5,6,7,8,9 };
+	int i = 0;
+	int* p = arr;
+	for (i = 0; i < 10; i += 1)
+	{
+		printf("%d", *p);
+		p += 1;
+	}
+	return 0;
+}
+
+问题：计算BMI指数（身体质量指数）。：
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+    int weight = 0;
+    int height = 0;
+    scanf("%d%d", &weight, &height);
+    double bmi = weight / ((double)height * height / 10000);
+    printf("%.2lf\n", bmi);
+    return 0;
+}
+
+根据给出的三角形3条边a, b, c（0 < a, b, c < 100,000），计算三角形的周长和面积：
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+	int a, b, c;
+	scanf("%d%d%d", &a, &b, &c);
+	if (0 < a < 10000 && 0 < b < 10000 && 0 < c < 10000)
+	{
+		double C;
+		C = a + b + c;
+		double p = (a + b + c) / 2.00;
+		double S = sqrt(p * (p - a) * (p - b) * (p - c));
+		printf("%.2lf\n", S);
+		printf("%.2lf\n", C);
+	}
+	return 0;
+}
+
+
+给定一个球体的半径，计算其体积。其中球体体积公式为 V = 4/3*πr^3，其中 π= 3.1415926。：
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#define n 3.1415926
+int main()
+{
+	float r;
+	scanf("%f", &r);
+	double S;
+	S = (4.0/ 3) * n * r * r * r;
+	printf("%.3lf", S);
+	return 0;
+}
+
+输入3科成绩，然后把三科成绩输出，成绩为整数形式：
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+
+int main()
+{
+	int a, b, c;
+	scanf("%d%d%d", &a, &b, &c);
+	printf("score1=%d,score2=%d,score3=%d", a, b, c);
+	return 0;
+}
+
+变种水仙花数 - Lily Number：把任意的数字，从中间拆分成两个数字，比如1461 可以拆分成（1和
+461）,（14和61）,（146和1),如果所有拆分后的乘积之和等于自身，则是一个Lily Number。求出 5位数中的所有 Lily Number。：
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+
+int main()
+{
+	int a=10000;
+	while (a < 100000)
+	{
+		if (a==(a/1000)*(a%1000)+(a / 100) * (a % 100)+ (a / 10) * (a % 10)+ (a / 10000) * (a % 10000))
+		{
+			printf("%d ", a);
+		}
+		a += 1;
+	}
+    return 0;
+}
+
+
+
+问题：KiKi今年5岁了，已经能够认识100以内的非负整数，并且并且能够进行 100 以内的非负整数的加法
+计算。不过，BoBo老师发现KiKi在进行大于等于100的正整数的计算时，规则如下：
+1. 只保留该数的最后两位，例如：对KiKi来说1234等价于34；
+2. 如果计算结果大于等于 100， 那么KIKI也仅保留计算结果的最后两位，如果此两位中十位为0，则只保
+留个位。
+例如：45+80 = 25
+要求给定非负整数 a和 b，模拟KiKi的运算规则计算出 a+b 的值。：
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+
+int main()
+{
+	int a, b;
+	scanf("%d%d", &a, &b);
+		int sum = a + b;
+		printf("%d", sum % 100);
+	return 0;
+}
+
+
+给定秒数seconds (0< seconds < 100,000,000)，把秒转化成小时、分钟和秒：
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+
+int main()
+{
+	int time;
+	scanf("%d", &time);
+	printf("%d %d %d", time / 3600, time%3600/60, time%3600%60);
+	return 0;
+}
+
+
+依次输入一个学生的3科成绩，在屏幕上输出该学生的总成绩以及平均成绩。：
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+
+int main()
+{
+	float a, b, c;
+	scanf("%f%f%f", &a, &b, &c);
+	float sum, average;
+	sum = a + b + c;
+	average = (a + b + c) / 3;
+	printf("%.2f %.2f", sum, average);
+	return 0;
+}
+
+
+BoBo买了一箱酸奶，里面有n盒未打开的酸奶，KiKi喜欢喝酸奶，第一时间发现了酸奶。KiKi每h分钟能
+喝光一盒酸奶，并且KiKi在喝光一盒酸奶之前不会喝另一个，那么经过m分钟后还有多少盒未打开的酸
+奶？：
